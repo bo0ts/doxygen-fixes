@@ -2238,6 +2238,14 @@ void addConfigOptions(Config *cfg)
                  TRUE
                 );
   //----
+  cb = cfg->addBool(
+                 "EXTERNAL_PAGES",
+                 "If the EXTERNAL_PAGES tag is set to YES all external pages will be listed\n"
+                 "under related pages. If set to NO, only the current project's pages will\n"
+                 "be listed.",
+                 TRUE
+                );
+  //----
   cs = cfg->addString(
                  "PERL_PATH",
                  "The PERL_PATH should be the absolute path and name of the perl script\n"

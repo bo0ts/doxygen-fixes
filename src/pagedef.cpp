@@ -265,11 +265,11 @@ void PageDef::writePageDocumentation(OutputList &ol)
 
 bool PageDef::visibleInIndex() const
 {
-  static bool allExternals = Config_getBool("ALLEXTERNALS");
+  static bool includeExternalPage = Config_getBool("EXTERNAL_PAGES");
   return // not part of a group
          !getGroupDef() && 
          // not an externally defined page
-         (!isReference() || allExternals) 
+         (!isReference() || includeExternalPage)
          // &&
          // not a subpage
          //(getOuterScope()==0 || 
