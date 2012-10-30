@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 # python script to generate configoptions.cpp from config.xml
 #
 # Copyright (C) 1997-2013 by Dimitri van Heesch.
