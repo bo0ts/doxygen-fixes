@@ -1192,7 +1192,8 @@ void MemberDef::writeLink(OutputList &ol,ClassDef *,NamespaceDef *,
   {
     if (isStatic()) ol.docify("+ "); else ol.docify("- ");
   }
-  if (!onlyText && isLinkable()) // write link
+  bool isNoDetailedDescription = !isDetailedSectionLinkable() && !m_impl->annMemb;
+  if (!onlyText && isLinkable() && !isNoDetailedDescription ) // write link
   {
     if (m_impl->mtype==MemberType_EnumValue && getGroupDef()==0 &&          // enum value is not grouped
         getEnumScope() && getEnumScope()->getGroupDef()) // but its container is
